@@ -1714,7 +1714,14 @@ namespace Novacode
 
             return new Picture(document, xml, new Image(document, document.mainPart.GetRelationship(id)));
         }
-
+        internal static string GetAuthorName()
+        {
+#if NETFRAMEWORK
+            return WindowsIdentity.GetCurrent().Name;
+#else
+            return string.Empty;
+#endif
+        }
         // Removed because it confusses the API.
         //public Picture InsertPicture(int index, string imageID)
         //{
@@ -1752,7 +1759,7 @@ namespace Novacode
             (
                 new XElement(DocX.w + t.ToString(),
                     new XAttribute(DocX.w + "id", 0),
-                    new XAttribute(DocX.w + "author", WindowsIdentity.GetCurrent().Name),
+                    new XAttribute(DocX.w + "author", GetAuthorName()),
                     new XAttribute(DocX.w + "date", edit_time),
                 content)
             );

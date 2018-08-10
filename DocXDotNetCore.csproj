@@ -4,14 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>DocXDotNetCore</PackageId>
-    <PackageVersion>1</PackageVersion>
+    <PackageVersion>1.0.2</PackageVersion>
     <Authors>okanlodos</Authors>
-    <PackageProjectUrl>https://github.com/okanlodos/DocXNETCore</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/okanlodos/DocXDotNetCore</PackageProjectUrl>
     <PackageReleaseNotes>=&gt; https://github.com/WordDocX/DocX/issues/31</PackageReleaseNotes>
     <Description>=&gt; https://github.com/WordDocX/DocX/issues/31</Description>
     <Owners>okanlodos</Owners>
   </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="DocXDotNetCore" Version="1.0.1" />
     <PackageReference Include="NuGet.CommandLine" Version="4.6.2" />
     <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
